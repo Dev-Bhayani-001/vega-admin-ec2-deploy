@@ -1,0 +1,32 @@
+<div class="bg-slate-800 p-5 rounded-md">
+  <div class="my-6" *ngFor="let row of aboutData; index as i">
+    <label for="message" class="block mb-2 text-sm font-medium text-white"
+      >About Us Data</label
+    >
+    <input
+      [(ngModel)]="row.title"
+      type="text"
+      id="title_Data{{ i }}"
+      class="my-4 border text-gray-900 text-sm rounded-lg block w-3/4 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+      placeholder="Enter Title..."
+      required
+    />
+    <textarea
+      [(ngModel)]="row.text"
+      id="message{{ i }}"
+      rows="4"
+      class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+      placeholder="Write your thoughts here..."
+    ></textarea>
+    <div class="flex justify-end">
+      <button
+        (click)="onSubmit(i)"
+        type="button"
+        id="button"
+        class="border text-gray-900 text-sm rounded-lg block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 my-5 font-medium rounded-lg text-sm px-5 py-2.5 hover:text-gray-700 hover:bg-green-300 hover:border-gray-600 focus:ring-gray-700"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
